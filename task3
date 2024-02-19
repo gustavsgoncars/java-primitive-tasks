@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    double x, y;
+    Scanner sc = new Scanner(System.in);
+    try {
+    x = sc.nextDouble();
+    y = sc.nextDouble();
+    sc.close();
+    }
+    catch(Exception ex) {
+      System.out.println("input-output error");
+      sc.close();
+      return;
+    }
+    boolean square1, square2, triangle, circle;
+    square1 = x>=3 && y>=3 && x<=7 && y<7;
+    square2 = x>4 && y>4 && x<6 && y<6;
+    triangle = y<=x+5 && y<=-x+15 && y<=10 && y>=7;
+    circle = (x-5)*(x-5)+(y-8)*(y-8)<1 && y>8;
+    if (true==square1 && square2==false){
+    System.out.println("red");
+    }  
+    else if (triangle==true && circle==false){
+    System.out.println("blue");  
+    }
+    else if (triangle==true && circle==true){
+    System.out.println("green");  
+    }
+    else{
+    System.out.println("white");
+    }
+  }
+}
