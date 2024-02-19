@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+class Main {
+  static Scanner sc;
+  public static int[] a;
+
+  public static void inputArray(int[] a, int i) {
+    if (i < a.length) {
+      a[i] = sc.nextInt();
+      inputArray(a, i + 1);
+    }
+  }
+
+  public static int poz(int i, int end) {
+    if (i < a.length) {
+      if (a[i] == 0) {
+        end = i + 1;
+      }
+      return poz(i + 1, end);
+    } else {
+      return end;
+    }
+  }
+
+  public static void main(String[] args) {
+    sc = new Scanner(System.in);
+
+    System.out.println("231RDB029 Gustavs Gončars\n");
+
+    System.out.print("count:");
+    int count = sc.nextInt();
+
+    System.out.print("numbers:");
+    a = new int[count];
+    inputArray(a, 0);
+
+    int result = poz(0, 0);
+    System.out.print("result: " + result);
+    sc.close();
+  }
+}
