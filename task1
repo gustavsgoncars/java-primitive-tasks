@@ -13,3 +13,4 @@ class Main {
     System.out.printf("miles-per-gallon: %.2f", milesPerGallon);
   }
 }
+
